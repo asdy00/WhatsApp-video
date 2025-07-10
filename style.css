@@ -136,20 +136,17 @@ video.hidden {
   display: none;
 }
 
+/* Grid Tombol 123 */
 .container1 {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, auto));
+  gap: 20px;
   justify-content: center;
-  align-items: center;
-  gap: 20px;              /* Jarak antar tombol */
   padding: 20px 0;
-  background: #0f2027;    /* warna sama seperti footer */
+  background: #0f2027;
 }
 
 /* Gaya tombol */
-.pl {
-  display: flex;
-}
-
 .pl h2 {
   background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #fff;
@@ -164,6 +161,7 @@ video.hidden {
   user-select: none;
   border: 1px solid #2c5364;
   text-align: center;
+  min-width: 60px;
 }
 
 /* Hover efek */
@@ -171,16 +169,4 @@ video.hidden {
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   box-shadow: 0 0 15px #2c5364, 0 0 20px #203a43;
   transform: translateY(-3px) scale(1.05);
-}
-
-/* Responsif */
-@media (max-width: 600px) {
-  .container1 {
-    flex-direction: column;
-  }
-
-  .pl h2 {
-    width: 60px;
-    text-align: center;
-  }
 }
