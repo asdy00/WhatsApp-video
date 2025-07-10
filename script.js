@@ -1,14 +1,26 @@
-// Ambil elemen DOM
-const menuIcon = document.getElementById('menuIcon');
-const sidebar = document.getElementById('sidebar');
-const closeBtn = document.getElementById('closeSidebar');
+// Sidebar toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const menuIcon = document.getElementById('menuIcon');
+  const sidebar = document.getElementById('sidebar');
+  const closeBtn = document.getElementById('closeSidebar');
 
-// Saat ikon garis tiga diklik → tampilkan sidebar
-menuIcon.addEventListener('click', () => {
-  sidebar.classList.add('active');
+  menuIcon.addEventListener('click', () => {
+    sidebar.classList.add('open');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+  });
 });
 
-// Saat tombol ❌ diklik → sembunyikan sidebar
-closeBtn.addEventListener('click', () => {
-  sidebar.classList.remove('active');
-});
+// Fungsi play video
+function playVideo(container) {
+  const thumb = container.querySelector('.thumb');
+  const video = container.querySelector('video');
+
+  if (thumb && video) {
+    thumb.style.display = 'none';
+    video.classList.remove('hidden');
+    video.play();
+  }
+}
