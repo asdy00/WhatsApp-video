@@ -1,11 +1,3 @@
-:root {
-  --bg: #0f0f0f;
-  --primary: #1e1e1e;
-  --accent: #ff3c00;
-  --text: #f0f0f0;
-  --hover: #333;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,55 +5,55 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #333;
-  color: var(--text);
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
+/* Header */
 header {
+  background-color: #222;
   display: flex;
   align-items: center;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  padding: 20px;
-  border-bottom: 1px solid #222;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 2px solid #444;
 }
 
-h1 {
+header h1 {
   font-size: 24px;
 }
 
+/* Menu icon */
 .menu-icon {
-  width: 30px;
-  height: 25px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  margin-right: 20px;
+  gap: 5px;
 }
 
 .menu-icon span {
   height: 3px;
-  background: var(--text);
+  width: 25px;
+  background: #fff;
   border-radius: 2px;
-  transition: 0.3s ease;
 }
 
+/* Sidebar */
 .sidebar {
   position: fixed;
+  left: -250px;
   top: 0;
-  left: -240px;
-  width: 200px;
   height: 100%;
-  background-color: rgba(20, 20, 20, 0.95);
-  color: var(--text);
-  padding: 25px 20px;
-  transition: left 0.3s ease;
+  width: 250px;
+  background: #1c1c1c;
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
   z-index: 1000;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar.active {
+.sidebar.open {
   left: 0;
 }
 
@@ -69,115 +61,77 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .sidebar h2 {
   font-size: 20px;
-}
-
-.close-btn {
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.close-btn:hover {
-  transform: scale(1.2);
+  color: #f39c12;
 }
 
 .sidebar ul {
   list-style: none;
 }
 
-.sidebar ul li {
-  padding: 10px;
-  margin-bottom: 10px;
-  background: var(--hover);
-  border-radius: 5px;
+.sidebar li {
+  margin: 10px 0;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar a:hover {
+  color: #f39c12;
+}
+
+/* Close button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.sidebar ul li:hover {
-  background: var(--accent);
-}
-
+/* Konten video */
 main {
-  padding: 0;
-  margin: 0;
+  padding: 20px;
+  margin-left: 0;
 }
-  
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
 .player-container {
-  height: 100%;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #000;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.thumb {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
 }
 
 video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  background: black;
+  border-radius: 8px;
+  display: block;
 }
 
-.container1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 0;
-  background: #0f2027; /* seperti footer */
-  flex-wrap: wrap; /* biar tetap rapi di layar kecil */
-}
-
-.pl h2 {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #ffffff;
-  padding: 15px 25px;
-  margin: 0;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(44, 83, 100, 0.5);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  user-select: none;
-  border: 1px solid #2c5364;
-  text-align: center;
-  min-width: 60px;
-}
-
-/* Hover efek */
-.pl h2:hover {
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  box-shadow: 0 0 15px #2c5364, 0 0 20px #203a43;
-  transform: translateY(-3px) scale(1.05);
-}
-
-/* Tidak perlu media query untuk ubah jadi kolom */
-
-/* Footer */
-footer {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 14px;
-  color: #ccc;
-}
-
-footer p {
-  margin: 0;
-}
-
-footer span {
-  color: #f39c12;
-  font-weight: bold;
-}
-
-footer strong {
-  color: #ffffff;
+video.hidden {
+  display: none;
 }
