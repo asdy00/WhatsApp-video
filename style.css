@@ -10,34 +10,77 @@ body {
   font-family: Arial, sans-serif;
   padding: 20px;
 }
-
 /* Header */
 header {
-  background-color: #222;
+  background: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: #ffffff;
+  padding: 15px 20px;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 2px solid #444;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-header h1 {
-  font-size: 24px;
-}
-
-/* Menu icon */
 .menu-icon {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
 .menu-icon span {
-  height: 3px;
+  display: block;
   width: 25px;
-  background: #fff;
+  height: 3px;
+  background-color: white;
   border-radius: 2px;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  align-items: center;
+  gap: 8px;
+}
+
+.title-wrapper h3 {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(to right, #00ff87, #60efff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.title-wrapper h2 {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #fc466b, #3f5e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.title-wrapper .11 {
+  font-size: 20px;
+  margin: 0;
+}
+/* Efek klik jika ingin dikembangkan (opsional) */
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
 }
 
 /* Sidebar */
